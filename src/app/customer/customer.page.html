@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Customer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="error">
+    <ion-text style="text-align:center;">
+      <p> Please make sure all fields are filled! </p>
+    </ion-text>
+  </div>
+  <div *ngIf="success">
+    <ion-text style="text-align:center;">
+      <p>Customer successfully created!</p>
+    </ion-text>
+  </div>
+  <form (ngSubmit)="submit()">
+    <ion-item>
+      <ion-label>Email: </ion-label>
+      <ion-input type="text" [(ngModel)]="customer.email" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Name: </ion-label>
+      <ion-textarea [(ngModel)]="customer.name" name="name"></ion-textarea>
+    </ion-item>
+    <br>
+    <ion-row>
+      <ion-col col-4>
+        <ion-button shape="round" color="secondary" (click)="dismiss()">cancel</ion-button>
+      </ion-col>
+      <ion-col col-6>
+      </ion-col>
+      <ion-col col-2>
+        <ion-button shape="round" color="primary" type="submit">add</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
