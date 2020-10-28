@@ -38,8 +38,4 @@ export class DataService {
       return error;
     }
   }
-
-  // public getMessageById(id: number): Customer {
-  //   return this.Customers[id];
-  // }
 }
